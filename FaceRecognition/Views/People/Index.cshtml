@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Microsoft.ProjectOxford.Face.Contract.Person>
+@{
+    ViewBag.Title = "People";
+}
+<h2>People</h2>
+<p>
+    <a asp-area="" asp-controller="People" asp-action="Create" asp-route-id="@ViewBag.PersonGroupId">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonId</td>
+            <td>@item.Name</td>
+            <td>
+                <a asp-area="" asp-controller="People" asp-action="Details" asp-route-id="@ViewBag.PersonGroupId" asp-route-personId="@item.PersonId">Details</a>|
+                <a asp-area="" asp-controller="People" asp-action="Edit" asp-route-id="@ViewBag.PersonGroupId" asp-route-personId="@item.PersonId">Edit</a>|
+                <a asp-area="" asp-controller="People" asp-action="AddFace" asp-route-id="@ViewBag.PersonGroupId" asp-route-personId="@item.PersonId">AddFace</a>|
+                <a asp-area="" asp-controller="People" asp-action="Delete" asp-route-id="@ViewBag.PersonGroupId" asp-route-personId="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
