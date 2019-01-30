@@ -1,0 +1,16 @@
+﻿@model string
+<style>
+    .row {   margin-top: 30px;  }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <h2>@ViewBag.Title</h2>
+        <partial name="_Upload" />
+        @if (Model != null)
+        {
+            <img src="@Model" width="600" />
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "AddFace";
+}
+<h2>Add face</h2>
+@if (ViewBag.Error != null)
+{
+    <strong>@ViewBag.Error</strong>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload person face:</p><br />
+                    <input type="file" name="PersonFace" /><br />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="Send" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
